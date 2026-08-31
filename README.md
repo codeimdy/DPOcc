@@ -1,6 +1,4 @@
-# DPOcc: DPOcc: Dual-Path Depth Modeling and Pillar-Based Encoding for Vision-Based 3D Semantic Occupancy Prediction
-
-
+# DPOcc: Dual-Path Depth Modeling and Pillar-Based Encoding for Vision-Based 3D Semantic Occupancy Prediction
 
 ## Introduction
 
@@ -144,19 +142,6 @@ Distributed training (replace `8` with the GPU count):
 bash tools/dist_train.sh \
   projects/configs/DPOcc_nusc/DPOcc_nusc_r50_256x704.py 8
 ```
-
-The density branch is controlled in the occupancy backbone configuration:
-
-```python
-img_bev_encoder_backbone=dict(
-    type='OccupancyEncoder',
-    # ...
-    use_density_enhancement=True,
-)
-```
-
-Set it to `False` for an ablation. The pillar representation remains active
-because it replaces the original fixed mean projection.
 
 ## Evaluation and prediction
 
