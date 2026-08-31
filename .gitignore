@@ -1,0 +1,45 @@
+# Python caches and build products
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+build/
+dist/
+mmdetection3d/build/
+
+# Environments and editor metadata
+.venv/
+venv/
+.idea/
+.vscode/
+.gitdata/
+
+# Datasets, archives and checkpoints
+data/
+*.tar
+*.tar.gz
+*.tar.bz2
+*.zip
+*.pth
+*.pt
+*.ckpt
+*.onnx
+
+# Training, evaluation and visualization outputs
+work_dirs/
+tools/work_dirs/
+.dist_test/
+results/
+outputs/
+predictions/
+vis/
+wandb/
+*.log
+
+# OS and temporary files
+.DS_Store
+*.swp
+*.swo
+*~
