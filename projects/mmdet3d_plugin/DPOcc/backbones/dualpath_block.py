@@ -8,16 +8,6 @@ from .modules import BottleNeckASPP, SwinBlock
 
 
 class VoxelToPillar(nn.Module):
-    """Merge the four commented VoxelToPillar prototypes into one module.
-
-    The original feature pipeline is retained: an MLP processes every voxel's
-    height vector, min/max/mean statistics are extracted, each statistic is
-    expanded, and a 1x1x1 convolution produces a pillar value.  The expansion
-    and 1x1x1 convolution are evaluated in their algebraically fused form to
-    avoid materialising a ``[B, 3I, C, X, Y]`` tensor.  This is mathematically
-    equivalent and keeps gradients for both original layers.
-    """
-
     def __init__(self, input_channels, intermediate_channels=64,
                  output_channels=1, final_kernel_size=None):
         super().__init__()
